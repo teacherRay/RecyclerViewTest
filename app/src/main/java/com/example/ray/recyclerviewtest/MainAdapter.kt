@@ -1,5 +1,6 @@
 package com.example.ray.recyclerviewtest
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -40,5 +41,14 @@ class MainAdapter( val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomViewHold
 }
 
 class CustomViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+
+    init {
+        view.setOnClickListener {
+            println("Click heard")
+
+            val intent = Intent(view.context,CourseDetailActivity::class.java)
+            view.context.startActivity(intent)
+        }
+    }
 
 }
